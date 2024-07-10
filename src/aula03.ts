@@ -7,6 +7,6 @@ class Curso {
     }
 }
 
-let c1 = new Curso("CFBCursos", "Typescript");
+let c1 = new Curso("CFBCursos", 100);
 console.log(c1.canal)
 console.log(c1.curso)
