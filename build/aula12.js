@@ -29,3 +29,14 @@ function teste(s1) {
 }
 const numero = teste('1234.56');
 console.log(numero);
+function somaDeNumeros(arthur) {
+    const maria = arthur.split(',');
+    const soma = maria.reduce((felipe, joice) => {
+        const gabriel = parseFloat(joice.trim());
+        return felipe + gabriel;
+    }, 0);
+    return soma;
+}
+const numerosS = "1.5, 2, 3.5, 41";
+const resultado = somaDeNumeros(numerosS);
+console.log(resultado);

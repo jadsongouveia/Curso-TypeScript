@@ -1,14 +1,8 @@
-/*
-for (var c=1;c<=10 ;c++) {
-    console.log(`${c} tudo bem`)
- }
-*/
-
-function teste():void{
-    console.log('teste');
+const teste2=(txt?:string):void=>{
+    console.log(txt);
 }
 
-
-
-
-
+teste2('CFBCursos');
+teste2('Curso de Typescript');
+teste2('Youtube');
+teste2();
