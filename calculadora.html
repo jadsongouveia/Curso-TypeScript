@@ -27,7 +27,14 @@
         #resultado{
             background-color: #fff;
             color: black;
-            
+            width: 230px;
+            height: 50px;
+            font-size: 40px;
+            text-align: right;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+           
             
         }
 
@@ -56,10 +63,10 @@
             <p id="resultado"></p>
             <table>
                 <tr>
-                    <td><button class="botao" onclick="insert('C')">C</button></td>
-                    <td><button class="botao" onclick="insert('<')"><</button></td>
+                    <td><button class="botao" onclick="clean()">C</button></td>
+                    <td><button class="botao" onclick="back()"><</button></td>
                     <td><button class="botao" onclick="insert('/')">/</button></td>
-                    <td><button class="botao" onclick="insert('X')">X</button></td>
+                    <td><button class="botao" onclick="insert('*')">X</button></td>
                 </tr>
                 <tr>
                     <td><button class="botao" onclick="insert('7')">7</button></td>
@@ -77,7 +84,7 @@
                     <td><button class="botao" onclick="insert('1')">1</button></td>
                     <td><button class="botao" onclick="insert('2')">2</button></td>
                     <td><button class="botao" onclick="insert('3')">3</button></td>
-                    <td rowspan="2"><button class="botao" onclick="insert('=')" style="height: 102px;">=</button></td>
+                    <td rowspan="2"><button class="botao" onclick="calcular()" style="height: 102px;">=</button></td>
                 </tr>
                 <tr>
                     <td colspan="2"><button  class="botao"  onclick="insert('0')" style="width: 102px;" >0</button></td>
@@ -89,7 +96,26 @@
 
     <script>
         function insert(num){
-            document.getElementById("resultado").innerHTML = num;
+            var numero = document.getElementById("resultado").innerHTML
+            document.getElementById('resultado').innerHTML = numero + num
+        }
+
+        function clean(){
+            document.getElementById('resultado').innerHTML = "";
+        }
+
+        function back(){
+            var resultado = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = resultado.substring(0,resultado.length -1);
+        }
+
+        function calcular(){
+            var resultado = document.getElementById('resultado').innerHTML;
+            if(resultado){
+                document.getElementById('resultado').innerHTML = eval(resultado)
+            }else {
+                document.getElementById('resultado').innerHTML = 'Nada...'
+            }
         }
     </script>
 </body>
