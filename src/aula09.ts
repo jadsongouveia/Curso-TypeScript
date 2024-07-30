@@ -13,7 +13,9 @@ enum dias{
 //console.log(dias[1])
 
 const d=new Date();
-//console.log(d.getDay())
+console.log(d.getDay())
+console.log(Object.keys(dias).find(key => dias[key as keyof typeof dias] === d.getDay())); // nome do dia da semana
+
 //console.log(dias[d.getDay()])
 
 enum cores{
