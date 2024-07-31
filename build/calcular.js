@@ -1,28 +1,37 @@
 "use strict";
 function insert(num) {
-    const resultadoElement = document.getElementById('resultado');
-    resultadoElement.innerHTML += num;
+    const resultadoE = document.getElementById('resultado');
+    if (resultadoE) {
+        const numeros = resultadoE.innerHTML;
+        resultadoE.innerHTML = numeros + num;
+    }
 }
 function clean() {
-    const resultadoElement = document.getElementById('resultado');
-    resultadoElement.innerHTML = '';
+    const resultadoE = document.getElementById('resultado');
+    if (resultadoE) {
+        resultadoE.innerHTML = "";
+    }
 }
 function back() {
-    const resultadoElement = document.getElementById('resultado');
-    resultadoElement.innerHTML = resultadoElement.innerHTML.slice(0, -1);
+    const resultadoE = document.getElementById('resultado');
+    if (resultadoE) {
+        resultadoE.innerHTML = resultadoE.innerHTML.slice(0, -1);
+    }
 }
 function calcular() {
-    const resultadoElement = document.getElementById('resultado');
-    const resultado = resultadoElement.innerHTML;
-    if (resultado) {
-        try {
-            resultadoElement.innerHTML = eval(resultado);
+    const resultadoE = document.getElementById('resultado');
+    if (resultadoE) {
+        const resultado = resultadoE.innerHTML;
+        if (resultado) {
+            try {
+                resultadoE.innerHTML = eval(resultado);
+            }
+            catch (error) {
+                'Error';
+            }
         }
-        catch (error) {
-            resultadoElement.innerHTML = 'Erro';
+        else {
+            resultadoE.innerHTML = 'Nada...';
         }
-    }
-    else {
-        resultadoElement.innerHTML = 'Nada ...';
     }
 }
