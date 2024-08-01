@@ -15,7 +15,8 @@ function clean() {
 function back() {
     const resultadoE = document.getElementById('resultado');
     if (resultadoE) {
-        resultadoE.innerHTML = resultadoE.innerHTML.slice(0, -1);
+        const resultado = resultadoE.innerHTML;
+        resultadoE.innerHTML = resultado.substring(0, resultado.length - 1);
     }
 }
 function calcular() {
@@ -31,7 +32,7 @@ function calcular() {
             }
         }
         else {
-            resultadoE.innerHTML = 'Nada...';
+            'Nadaa...';
         }
     }
 }

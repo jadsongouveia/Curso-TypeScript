@@ -1,41 +1,42 @@
 function insert(num:string):void{
-    const resultadoE = document.getElementById('resultado');
+    const resultadoE = document.getElementById('resultado') as HTMLElement;
     if(resultadoE){
-        const numeros = resultadoE.innerHTML;
-        resultadoE.innerHTML = numeros + num;
+        const numeros = resultadoE.innerHTML
+        resultadoE.innerHTML = numeros + num
     }
 }
 
 function clean():void{
-    const resultadoE = document.getElementById('resultado');
+    const resultadoE = document.getElementById('resultado') as HTMLElement;
     if(resultadoE){
         resultadoE.innerHTML = ""
     }
 }
 
 function back():void{
-    const resultadoE = document.getElementById('resultado');
+    const resultadoE = document.getElementById('resultado') as HTMLElement;
     if(resultadoE){
-        resultadoE.innerHTML = resultadoE.innerHTML.slice(0, -1);
+        const resultado = resultadoE.innerHTML;
+        resultadoE.innerHTML = resultado.substring(0, resultado.length -1);
     }
 }
 
 function calcular():void{
-    const resultadoE = document.getElementById('resultado');
+    const resultadoE = document.getElementById('resultado') as HTMLElement;
     if(resultadoE){
         const resultado = resultadoE.innerHTML;
         if(resultado){
             try{
                 resultadoE.innerHTML = eval(resultado);
-                
-            }catch (error){
+            }catch(error){
                 'Error'
             }
         }else{
-            resultadoE.innerHTML = 'Nada...'
+            'Nadaa...'
         }
     }
 }
+
 
 
 
