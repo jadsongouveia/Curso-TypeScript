@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- BABEL SCRIPT  -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+        const app = document.getElementById("app")
+ 
+        function Header({ title }) {
+            return (<h1>{title ? title: 'Default Title'}</h1>);
+        }
+
+        function HomePage() {
+            const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+            const [likes, setLikes] = React.useState(0);
+
+            function handleClick() {
+                setLikes(likes + 1);
+            }
+
+            return ( 
+                <div>
+                    <Header title="Delelop. Preview. Ship." />
+                     <ul>
+                        {names.map((name) => (
+                            <li key={name}>{name}</li>
+                        ))}
+                     </ul>
+                     
+                     <button onClick={handleClick}>Likes ({likes})</button>
+                </div>
+            );
+        }
+ 
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+    </script>
+    <script>
+/*
+        COMPARAÇÃO DE SCRIPT PRA REACT
+
+        ADICIONAR H1 EM SCRIPT
+
+        const app = document.getElementById('app');
+        const header = creatElement('h1');
+        const text = 'Devolip. Preview. Ship.';
+        headerContent = document.creatTextNode(text);
+        header.appendChild(headerContent);
+        app.appendChild(header);
+
+        EM REACT 
+
+        const app = document.getElementById('app');
+        const root = ReactDom.creatRoot(app);
+        root.render(<h1>Develop. Preview. Ship. </h1>);
+*/
+    </script>
+</body>
+</html>
